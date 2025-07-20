@@ -790,20 +790,11 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 72px;
-    max-width: 288px;
-    margin: 0 auto;
-}
-
-.footer-container-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
 }
 
 .footer-logo {
     display: inline-block;
-    justify-content: center;
     margin-bottom: 16px;
 }
 
@@ -811,18 +802,28 @@ button {
     color: #f4f4fd;
 }
 
+.footer-container-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 72px;
+}
+
 .footer-text {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #f4f4fd;
-    max-width: 288px;
+    width: 264px;
 }
 
 .footer-container-social {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 72px;
 }
 
 .footer-social-text {
@@ -832,16 +833,23 @@ button {
     letter-spacing: 0.02em;
     color: #fff;
     margin-bottom: 16px;
+    text-align: center;
 }
 
 .footer-social-list {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
     gap: 16px;
 }
 
 .footer-social-link-item {
     width: 40px;
     height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-social-link {
@@ -864,12 +872,6 @@ button {
     background-color: #31d0aa;
 }
 
-.footer-subscribe-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .footer-subscribe-container-text {
     font-weight: 500;
     font-size: 16px;
@@ -877,13 +879,16 @@ button {
     letter-spacing: 0.02em;
     color: #fff;
     margin-bottom: 16px;
+    text-align: center;
+
 }
 
 .footer-subscribe-container-form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    justify-content: center;
     align-items: center;
+    gap: 16px;
 }
 
 .footer-subscribe-container-input {
@@ -893,7 +898,6 @@ button {
     height: 40px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background-color: transparent;
-    font-weight: 400;
     font-size: 12px;
     line-height: 2;
     letter-spacing: 0.04em;
@@ -942,45 +946,78 @@ button {
 
 @media screen and (min-width: 768px) {
     .footer-container {
+        display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        row-gap: 72px;
-        column-gap: 24px;
-    }
-
-    .footer-container-logo,
-    .footer-container-social {
-        flex-basis: calc((100% - 24px) / 2);
-    }
-
-    .footer-subscribe-container {
-        flex-basis: 100%;
-    }
-
-    .footer-logo {
+        align-items: flex-start;
         justify-content: flex-start;
+        column-gap: 24px;
+        padding-left: 108px;
     }
 
-    .footer-container-logo {
+    .footer-container-social {
         align-items: flex-start;
     }
 
-    .footer-container-logo,
-    .footer-container-social,
-    .footer-subscribe-container {
-        align-items: flex-start;
+    .footer-social-text {
+        text-align: left;
     }
 
-    .footer-subscribe-container-form {
-        flex-direction: row;
-        gap: 24px;
-    }
 
     .footer-subscribe-container-input {
         width: 264px;
     }
 
-    .footer-text {
-        width: 264px;
+    .footer-subscribe-container-form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .footer-subscribe-container-text {
+        text-align: left;
+    }
+
+
+    .footer-container-logo {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .page-footer {
+        padding: 100px 0;
+    }
+
+    .footer-container {
+        align-items: baseline;
+        padding-left: 0;
+        flex-wrap: nowrap;
+        column-gap: 0;
+    }
+
+    .footer-container-logo {
+        margin-right: 120px;
+        margin-bottom: 0;
+    }
+
+    .footer-container-social {
+        margin-bottom: 0;
+    }
+
+    .footer-social-list {
+        justify-content: center;
+    }
+
+    .footer-subscribe-container {
+        margin-left: 80px;
+    }
+
+    .footer-subscribe-container-form {
+        flex-direction: row;
+        gap: 24px;
     }
 }
